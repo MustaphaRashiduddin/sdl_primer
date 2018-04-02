@@ -3,15 +3,11 @@ typedef enum { false, true } bool;
 
 bool init();
 bool load_media();
-void close();
+void sdl_close();
 
 SDL_Window *window = 0;
 SDL_Surface *screen_surface = 0;
 SDL_Surface *hello_world = 0;
-
-bool init();
-bool load_media();
-void close();
 
 int main(int argc, char **argv)
 {
@@ -26,7 +22,7 @@ int main(int argc, char **argv)
                         SDL_Delay(2000);
                 }
         }
-        close();
+        sdl_close();
 }
 
 bool init()
@@ -59,7 +55,7 @@ bool load_media()
         return success;
 }
 
-void close()
+void sdl_close()
 {
         SDL_FreeSurface(hello_world);
         hello_world = 0;
